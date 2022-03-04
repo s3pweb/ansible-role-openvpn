@@ -65,7 +65,7 @@
     table: nat
     chain: POSTROUTING
     source: "{{ openvpn_server_network }}/24"
-    to_source: "{{ ansible_default_ipv4.address }}"
+    to_source: "{{ openvpn_server_public_ip }}"
     jump: SNAT
     action: insert
     comment: "Perform NAT readdressing"
